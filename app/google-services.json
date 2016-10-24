@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "169402602905",
+    "firebase_url": "https://earlytwo-9cc6a.firebaseio.com",
+    "project_id": "earlytwo-9cc6a",
+    "storage_bucket": "earlytwo-9cc6a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:169402602905:android:13b021232e687016",
+        "android_client_info": {
+          "package_name": "com.hustleandswag.earlytwo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "169402602905-mu5o40hmglqq6ahiqmma3qdibin7k1h9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hustleandswag.earlytwo",
+            "certificate_hash": "7F82BBA1F231472D8516DC87FE6492B0EDF6BBC2"
+          }
+        },
+        {
+          "client_id": "169402602905-5i8n5gkf377jsulkd23d2fgualq00i8r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB856lvleRd7WQ9wmNRye-wTSgK5-xxoLE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "169402602905-5i8n5gkf377jsulkd23d2fgualq00i8r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
