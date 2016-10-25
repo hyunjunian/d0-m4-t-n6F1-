@@ -2,6 +2,8 @@ package com.hustleandswag.earlytwo;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
@@ -69,6 +71,28 @@ public class  MainActivity extends BaseActivity {
                 startActivity(new Intent(MainActivity.this, NewPostActivity.class));
             }
         });
+
+        BottomNavigationView bottomNavigationView = (BottomNavigationView)
+                findViewById(R.id.bottom_navigation);
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(
+                new BottomNavigationView.OnNavigationItemSelectedListener() {
+                    @Override
+                    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                        switch (item.getItemId()) {
+                            case R.id.action_cards:
+                                break;
+                            case R.id.action_me:
+                                break;
+                            case R.id.action_friends:
+                                break;
+                            case R.id.action_write:
+                                startActivity(new Intent(MainActivity.this, NewPostActivity.class));
+                                break;
+                        }
+                        return false;
+                    }
+                });
     }
 
     @Override

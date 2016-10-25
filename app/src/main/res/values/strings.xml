@@ -13,7 +13,11 @@
     <string name="hint_password">password</string>
     <string name="hint_email">email</string>
     <string name="sign_in">Sign In</string>
-    <string name="heading_recent">Recent</string>
-    <string name="heading_my_posts">My Posts</string>
-    <string name="heading_my_top_posts">My Top Posts</string>
+    <string name="heading_recent">My</string>
+    <string name="heading_my_posts">Friends</string>
+    <string name="heading_my_top_posts">All</string>
+    <string name="bottom_cards">cards</string>
+    <string name="bottom_me">me</string>
+    <string name="bottom_friends">friends</string>
+    <string name="bottom_write">write</string>
 </resources>

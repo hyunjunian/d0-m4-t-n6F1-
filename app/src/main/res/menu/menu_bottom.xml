@@ -2,15 +2,27 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/action_favorites"
+        android:id="@+id/action_cards"
         android:enabled="true"
         android:icon="@android:drawable/ic_dialog_alert"
-        android:title="yoyo"
+        android:title="@string/bottom_cards"
         app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/action_schedules"
+        android:id="@+id/action_me"
         android:enabled="true"
-        android:icon="@android:drawable/ic_btn_speak_now"
-        android:title="haha"
+        android:icon="@android:drawable/ic_menu_myplaces"
+        android:title="@string/bottom_me"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_friends"
+        android:enabled="true"
+        android:icon="@android:drawable/ic_menu_mylocation"
+        android:title="@string/bottom_friends"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_write"
+        android:enabled="true"
+        android:icon="@android:drawable/ic_input_add"
+        android:title="@string/bottom_write"
         app:showAsAction="ifRoom" />
 </menu>

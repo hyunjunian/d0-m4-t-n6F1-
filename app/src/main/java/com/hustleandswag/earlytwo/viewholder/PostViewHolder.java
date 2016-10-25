@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.hustleandswag.earlytwo.Choseong;
 import com.hustleandswag.earlytwo.R;
 import com.hustleandswag.earlytwo.models.Post;
 
@@ -31,7 +32,7 @@ public class PostViewHolder extends RecyclerView.ViewHolder {
     }
 
     public void bindToPost(Post post, View.OnClickListener starClickListener) {
-        titleView.setText(post.title);
+        titleView.setText(Choseong.getInitialSound(post.title));
         authorView.setText(post.author);
         numStarsView.setText(String.valueOf(post.starCount));
         bodyView.setText(post.body);
