@@ -86,7 +86,7 @@ public abstract class PostListFragment extends Fragment {
                 });
 
                 // Determine if the current user has liked this post and set UI accordingly
-                if (model.stars.containsKey(getUid())) {
+                if (model.likes.containsKey(getUid())) {
                     viewHolder.starView.setImageResource(R.drawable.ic_toggle_star_24);
                 } else {
                     viewHolder.starView.setImageResource(R.drawable.ic_toggle_star_outline_24);
@@ -101,8 +101,8 @@ public abstract class PostListFragment extends Fragment {
                         DatabaseReference userPostRef = mDatabase.child("user-posts").child(model.uid).child(postRef.getKey());
 
                         // Run two transactions
-                        onStarClicked(globalPostRef);
-                        onStarClicked(userPostRef);
+                        onlikeClicked(globalPostRef);
+                        onlikeClicked(userPostRef);
                     }
                 });
             }
@@ -110,8 +110,8 @@ public abstract class PostListFragment extends Fragment {
         mRecycler.setAdapter(mAdapter);
     }
 
-    // [START post_stars_transaction]
-    private void onStarClicked(DatabaseReference postRef) {
+    // [START post_likes_transaction]
+    private void onlikeClicked(DatabaseReference postRef) {
         postRef.runTransaction(new Transaction.Handler() {
             @Override
             public Transaction.Result doTransaction(MutableData mutableData) {
@@ -120,14 +120,14 @@ public abstract class PostListFragment extends Fragment {
                     return Transaction.success(mutableData);
                 }
 
-                if (p.stars.containsKey(getUid())) {
-                    // Unstar the post and remove self from stars
-                    p.starCount = p.starCount - 1;
-                    p.stars.remove(getUid());
+                if (p.likes.containsKey(getUid())) {
+                    // Unstar the post and remove self from likes
+                    p.likeCount = p.likeCount - 1;
+                    p.likes.remove(getUid());
                 } else {
-                    // Star the post and add self to stars
-                    p.starCount = p.starCount + 1;
-                    p.stars.put(getUid(), true);
+                    // Star the post and add self to likes
+                    p.likeCount = p.likeCount + 1;
+                    p.likes.put(getUid(), true);
                 }
 
                 // Set value and report transaction success
@@ -143,7 +143,7 @@ public abstract class PostListFragment extends Fragment {
             }
         });
     }
-    // [END post_stars_transaction]
+    // [END post_likes_transaction]
 
     @Override
     public void onDestroy() {

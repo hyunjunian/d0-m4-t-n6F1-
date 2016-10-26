@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.Query;
@@ -18,10 +19,9 @@ public class MyTopPostsFragment extends PostListFragment {
     @Override
     public Query getQuery(DatabaseReference databaseReference) {
         // [START my_top_posts_query]
-        // My top posts by number of stars
-        String myUserId = getUid();
-        Query myTopPostsQuery = databaseReference.child("user-posts").child(myUserId)
-                .orderByChild("starCount");
+        // Top posts by number of likes
+        Query myTopPostsQuery = databaseReference.child("posts")
+                .orderByChild("likeCount");
         // [END my_top_posts_query]
 
         return myTopPostsQuery;

@@ -19,10 +19,4 @@
         android:icon="@android:drawable/ic_menu_mylocation"
         android:title="@string/bottom_friends"
         app:showAsAction="ifRoom" />
-    <item
-        android:id="@+id/action_write"
-        android:enabled="true"
-        android:icon="@android:drawable/ic_input_add"
-        android:title="@string/bottom_write"
-        app:showAsAction="ifRoom" />
 </menu>

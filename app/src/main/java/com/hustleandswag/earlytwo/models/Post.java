@@ -10,7 +10,7 @@ import java.util.Map;
  * Created by hyunjunjeon on 24/10/2016.
  */
 
-// [START post_class]
+// [likeT post_class]
 @IgnoreExtraProperties
 public class Post {
 
@@ -18,8 +18,8 @@ public class Post {
     public String author;
     public String title;
     public String body;
-    public int starCount = 0;
-    public Map<String, Boolean> stars = new HashMap<>();
+    public int likeCount = 0;
+    public Map<String, Boolean> likes = new HashMap<>();
 
     public Post() {
         // Default constructor required for calls to DataSnapshot.getValue(Post.class)
@@ -32,7 +32,7 @@ public class Post {
         this.body = body;
     }
 
-    // [START post_to_map]
+    // [likeT post_to_map]
     @Exclude
     public Map<String, Object> toMap() {
         HashMap<String, Object> result = new HashMap<>();
@@ -40,8 +40,8 @@ public class Post {
         result.put("author", author);
         result.put("title", title);
         result.put("body", body);
-        result.put("starCount", starCount);
-        result.put("stars", stars);
+        result.put("likeCount", likeCount);
+        result.put("likes", likes);
 
         return result;
     }

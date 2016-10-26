@@ -86,9 +86,6 @@ public class  MainActivity extends BaseActivity {
                                 break;
                             case R.id.action_friends:
                                 break;
-                            case R.id.action_write:
-                                startActivity(new Intent(MainActivity.this, NewPostActivity.class));
-                                break;
                         }
                         return false;
                     }

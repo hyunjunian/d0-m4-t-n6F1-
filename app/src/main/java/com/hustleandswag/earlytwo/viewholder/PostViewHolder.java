@@ -34,7 +34,7 @@ public class PostViewHolder extends RecyclerView.ViewHolder {
     public void bindToPost(Post post, View.OnClickListener starClickListener) {
         titleView.setText(Choseong.getInitialSound(post.title));
         authorView.setText(post.author);
-        numStarsView.setText(String.valueOf(post.starCount));
+        numStarsView.setText(String.valueOf(post.likeCount));
         bodyView.setText(post.body);
 
         starView.setOnClickListener(starClickListener);
