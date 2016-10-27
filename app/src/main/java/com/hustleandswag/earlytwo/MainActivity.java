@@ -72,6 +72,7 @@ public class  MainActivity extends BaseActivity {
             }
         });
 
+        // bottomNav
         BottomNavigationView bottomNavigationView = (BottomNavigationView)
                 findViewById(R.id.bottom_navigation);
 
