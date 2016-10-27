@@ -20,4 +20,7 @@
     <string name="bottom_me">me</string>
     <string name="bottom_friends">friends</string>
     <string name="bottom_write">write</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
