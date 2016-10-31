@@ -10,6 +10,8 @@
 
     <EditText
         android:id="@+id/search_tag"
+        android:backgroundTint="@color/text"
+        android:textColorHint="@color/divider"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"

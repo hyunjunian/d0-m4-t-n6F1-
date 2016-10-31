@@ -2,17 +2,67 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
+    android:background="@color/background"
+    android:clickable="true"
     tools:context="com.hustleandswag.earlytwo.fragment.ProfileFragment">
-
-    <!-- TODO: Update blank fragment layout -->
 
     <TextView
         android:id="@+id/user_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="user_name"
-        android:textColor="@color/white"
-        android:gravity="center" />
+        android:layout_marginTop="18dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:textColor="@color/text"
+        android:textSize="14dp"
+        android:text="Cha Hyuk"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <LinearLayout
+        android:id="@+id/profile_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/user_name"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <ImageView
+            android:src="@android:drawable/btn_star"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginLeft="24dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/user_sangme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="''You Complete Me''"
+                android:textSize="12dp"
+                android:textColor="@color/text"
+                android:gravity="center" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@+id/profile_info"
+        android:text="Friends List"
+        android:textColor="@color/text"
+        android:textSize="8dp"
+        android:backgroundTint="@color/button_bg"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp" />
 
 </RelativeLayout>

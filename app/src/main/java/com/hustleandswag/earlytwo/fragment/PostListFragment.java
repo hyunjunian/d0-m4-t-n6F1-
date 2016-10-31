@@ -93,9 +93,9 @@ public abstract class PostListFragment extends Fragment {
 
                         // Determine if the current user has liked this post and set UI accordingly
                         if (model.likes.containsKey(getUid())) {
-                            viewHolder.starView.setImageResource(R.drawable.ic_toggle_star_24);
+                            viewHolder.starView.setImageResource(R.drawable.ic_favorite_black_24dp);
                         } else {
-                            viewHolder.starView.setImageResource(R.drawable.ic_toggle_star_outline_24);
+                            viewHolder.starView.setImageResource(R.drawable.ic_favorite_border_black_24dp);
                         }
 
                         // Bind Post to ViewHolder, setting OnClickListener for the star button
@@ -158,9 +158,9 @@ public abstract class PostListFragment extends Fragment {
 
                 // Determine if the current user has liked this post and set UI accordingly
                 if (model.likes.containsKey(getUid())) {
-                    viewHolder.starView.setImageResource(R.drawable.ic_toggle_star_24);
+                    viewHolder.starView.setImageResource(R.drawable.ic_favorite_black_24dp);
                 } else {
-                    viewHolder.starView.setImageResource(R.drawable.ic_toggle_star_outline_24);
+                    viewHolder.starView.setImageResource(R.drawable.ic_favorite_border_black_24dp);
                 }
 
                 // Bind Post to ViewHolder, setting OnClickListener for the star button
