@@ -4,20 +4,17 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.hustleandswag.earlytwo.fragment.EmptyFragment;
 import com.hustleandswag.earlytwo.fragment.FriendsFragment;
 import com.hustleandswag.earlytwo.fragment.MyPostsFragment;
 import com.hustleandswag.earlytwo.fragment.MyTopPostsFragment;
@@ -30,6 +27,7 @@ public class  MainActivity extends BaseActivity {
 
     private FragmentPagerAdapter mPagerAdapter;
     private ViewPager mViewPager;
+    private BackKeyClose backKeycloseHandler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,6 +83,20 @@ public class  MainActivity extends BaseActivity {
                     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                         switch (item.getItemId()) {
                             case R.id.action_cards:
+                                EmptyFragment newEmptyFragment = new EmptyFragment();
+                                Bundle args0 = new Bundle();
+                                //args.putInt(FriendsFragment.ARG_POSITION, position);
+                                newEmptyFragment.setArguments(args0);
+
+                                FragmentTransaction transaction0 = getSupportFragmentManager().beginTransaction();
+
+                                // Replace whatever is in the fragment_container view with this fragment,
+                                // and add the transaction to the back stack so the user can navigate back
+                                transaction0.replace(R.id.fragment_container, newEmptyFragment);
+                                transaction0.addToBackStack(null);
+
+                                // Commit the transaction
+                                transaction0.commit();
                                 break;
                             case R.id.action_me:
                                 ProfileFragment newFragment = new ProfileFragment();
@@ -123,31 +135,11 @@ public class  MainActivity extends BaseActivity {
                     }
                 });
 
-        // fragment by nav
+        // backKey
+
+        backKeycloseHandler = new BackKeyClose(this);
 
 
-        // Check that the activity is using the layout version with
-        // the fragment_container FrameLayout
-        if (findViewById(R.id.fragment_container) != null) {
-
-            // However, if we're being restored from a previous state,
-            // then we don't need to do anything and should return or else
-            // we could end up with overlapping fragments.
-            if (savedInstanceState != null) {
-                return;
-            }
-
-            // Create a new Fragment to be placed in the activity layout
-            ProfileFragment firstFragment = new ProfileFragment();
-
-            // In case this activity was started with special instructions from an
-            // Intent, pass the Intent's extras to the fragment as arguments
-            firstFragment.setArguments(getIntent().getExtras());
-
-            // Add the fragment to the 'fragment_container' FrameLayout
-            getSupportFragmentManager().beginTransaction()
-                    .add(R.id.fragment_container, firstFragment).commit();
-        }
     }
 
     @Override
@@ -167,6 +159,12 @@ public class  MainActivity extends BaseActivity {
         } else {
             return super.onOptionsItemSelected(item);
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        //super.onBackPressed();
+        backKeycloseHandler.onBackPressed();
     }
 
 }

@@ -23,7 +23,7 @@ public class MyTopPostsFragment extends PostListFragment {
         // [START my_top_posts_query]
         // Top posts by number of likes
         Query myTopPostsQuery;
-        String tag=getSearchTag();
+        String tag = getSearchTag();
         if(TextUtils.isEmpty(tag)){
             myTopPostsQuery = databaseReference.child("posts")
                     .orderByChild("likeCount");
@@ -31,7 +31,6 @@ public class MyTopPostsFragment extends PostListFragment {
         else{
             myTopPostsQuery = databaseReference.child("user-posts").child(getUid())
                     .orderByChild("likeCount");
-            Log.d("dd", "dkkdkdkdskdsk:" + tag);
         }
         // [END my_top_posts_query]
 
