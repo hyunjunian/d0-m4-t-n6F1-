@@ -12,6 +12,10 @@ public class Choseong {
         for(int i=0;i<text.length();i++) {
             int code = text.charAt(i)-44032;
             if(code>-1 && code<11172) result += cho[code/588];
+            else if(text.charAt(i)==32){
+                result += text.charAt(i);
+                result += text.charAt(i);
+            }
             else result += text.charAt(i);
         }
         return result;

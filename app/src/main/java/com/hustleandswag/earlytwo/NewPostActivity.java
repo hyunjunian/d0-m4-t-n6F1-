@@ -6,7 +6,9 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -32,6 +34,7 @@ public class NewPostActivity extends BaseActivity {
     private EditText mTitleField;
     private EditText mBodyField;
     private FloatingActionButton mSubmitButton;
+    private Spinner dropdown;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +48,11 @@ public class NewPostActivity extends BaseActivity {
         mTitleField = (EditText) findViewById(R.id.field_title);
         mBodyField = (EditText) findViewById(R.id.field_body);
         mSubmitButton = (FloatingActionButton) findViewById(R.id.fab_submit_post);
+
+        dropdown = (Spinner)findViewById(R.id.share_range);
+        String[] items = new String[]{"all", "friends", "me"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, items);
+        dropdown.setAdapter(adapter);
 
         mSubmitButton.setOnClickListener(new View.OnClickListener() {
             @Override

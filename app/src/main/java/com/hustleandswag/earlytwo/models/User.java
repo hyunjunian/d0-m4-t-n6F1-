@@ -2,6 +2,9 @@ package com.hustleandswag.earlytwo.models;
 
 import com.google.firebase.database.IgnoreExtraProperties;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Created by hyunjunjeon on 24/10/2016.
  */
@@ -12,6 +15,8 @@ public class User {
 
     public String username;
     public String email;
+    public String phone;
+    public Map<String, Boolean> friends = new HashMap<>();
 
     public User() {
         // Default constructor required for calls to DataSnapshot.getValue(User.class)
