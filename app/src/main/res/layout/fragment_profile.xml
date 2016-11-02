@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background"
+    android:background="@color/background_gradient"
     android:clickable="true"
     tools:context="com.hustleandswag.earlytwo.fragment.ProfileFragment">
 
@@ -57,12 +57,12 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="30dp"
-        android:layout_below="@+id/profile_info"
         android:text="Friends List"
         android:textColor="@color/text"
         android:textSize="8dp"
         android:backgroundTint="@color/button_bg"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp" />
+        android:layout_below="@+id/profile_info"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/button3" />
 
 </RelativeLayout>
