@@ -5,6 +5,7 @@
     android:layout_height="wrap_content">
 
     <ImageView
+        android:id="@+id/friend_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
@@ -12,10 +13,11 @@
         android:src="@drawable/ic_action_account_circle_40" />
 
     <TextView
+        android:id="@+id/friend_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cha Hyuck"
-        android:id="@+id/textView" />
+        android:text="Cha Hyeok"
+        android:textColor="@color/text"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -23,15 +25,15 @@
         android:gravity="right">
 
         <Button
+            android:id="@+id/button"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
-            android:text="Friends List"
+            android:text="add to friend"
             android:textColor="@color/text"
             android:textSize="8dp"
             android:backgroundTint="@color/button_bg"
             android:layout_below="@+id/profile_info"
-            android:layout_centerHorizontal="true"
-            android:id="@+id/button3" />
+            android:layout_centerHorizontal="true" />
 
     </LinearLayout>
 
